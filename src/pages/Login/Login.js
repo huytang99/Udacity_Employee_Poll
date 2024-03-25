@@ -11,7 +11,7 @@ const Login = ({ dispatch, loggedIn }) => {
     const urlParams = new URLSearchParams(window.location.search);
     const redirectUrl = urlParams.get("redirectUrl");
     console.log(redirectUrl);
-    return <Navigate to={redirectUrl ? redirectUrl : "/"} />;
+    return <Navigate to={redirectUrl} />;
   }
 
   const handleUsernameInput = (e) => {

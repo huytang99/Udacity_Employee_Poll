@@ -16,27 +16,30 @@ const Leaderboard = ({ users, questions }) => {
       <h1 className="text-3xl font-bold mt-9 ml-5 mb-11 text-green-700">
         Leaderboard
       </h1>
-      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" class="px-6 py-3 text-green-500">
+              <th scope="col" className="px-6 py-3 text-green-500">
                 User
               </th>
-              <th scope="col" class="px-6 py-3 text-green-500">
+              <th scope="col" className="px-6 py-3 text-green-500">
                 Answered Questions
               </th>
-              <th scope="col" class="px-6 py-3 text-green-500">
+              <th scope="col" className="px-6 py-3 text-green-500">
                 Created Questions
               </th>
             </tr>
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr class="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr
+                key={user.id}
+                className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600"
+              >
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   <div className="flex align-middle">
                     <img
@@ -49,8 +52,10 @@ const Leaderboard = ({ users, questions }) => {
                     </span>
                   </div>
                 </th>
-                <td class="px-6 py-4">{Object.keys(user.answers).length}</td>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
+                  {Object.keys(user.answers).length}
+                </td>
+                <td className="px-6 py-4">
                   {getNumberOfQuestionsByAuthor(user.id)}
                 </td>
               </tr>
